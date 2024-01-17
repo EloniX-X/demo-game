@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://dwueie8kw80wy"]
+
+[ext_resource type="Script" path="res://movement.gd" id="1_wrv4p"]
+[ext_resource type="Script" path="res://enemy.gd" id="2_pioy5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sggd4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p46o0"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_56k3q"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p5i3n"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_5ay0i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_so71k"]
+size = Vector3(1.76074, 1.92908, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xx0e1"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(9.515, 0, 0, 0, 1, 0, 0, 0, 4.52, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_sggd4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_p46o0")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00302124, 0.0155072, -0.00590181)
+script = ExtResource("1_wrv4p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44436, 0)
+mesh = SubResource("CapsuleMesh_56k3q")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000980854, 2.0745, -0.0058884)
+
+[node name="playerColl" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45217, 0)
+shape = SubResource("CapsuleShape3D_p5i3n")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(-0.0214296, 0.198846, 0.00100181, 0.198849, 0.0214298, 0, -0.000107343, 0.000996046, -0.199997, 0.594868, 1.87293, 0)
+mesh = SubResource("PrismMesh_5ay0i")
+
+[node name="collsisionArea" type="Area3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026314, 1.59729, 0)
+
+[node name="collsionArea" type="CollisionShape3D" parent="CharacterBody3D/collsisionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.380371, -0.329231, 0)
+shape = SubResource("BoxShape3D_so71k")
+
+[node name="CharacterBody3D2" type="CharacterBody3D" parent="."]
+transform = Transform3D(-0.891995, 0, 0.452046, 0, 1, 0, -0.452046, 0, -0.891995, 2.95891, 0.0155072, -0.00590181)
+script = ExtResource("2_pioy5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44436, 0)
+mesh = SubResource("CapsuleMesh_56k3q")
+
+[node name="CollisionBox3D" type="CollisionShape3D" parent="CharacterBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45217, 0)
+shape = SubResource("CapsuleShape3D_p5i3n")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="CharacterBody3D2"]
+transform = Transform3D(-0.0214296, 0.198846, 0.00100181, 0.198849, 0.0214298, 0, -0.000107343, 0.000996046, -0.199997, 0.594868, 1.87293, 0)
+mesh = SubResource("PrismMesh_5ay0i")
+
+[node name="enemyCollision" type="Area3D" parent="CharacterBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65099, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D2/enemyCollision"]
+shape = SubResource("BoxShape3D_xx0e1")
+
+[connection signal="area_entered" from="CharacterBody3D/collsisionArea" to="CharacterBody3D" method="_on_collsision_area_area_entered"]

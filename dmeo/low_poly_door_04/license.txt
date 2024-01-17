@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low poly door #04
+* source:	https://sketchfab.com/3d-models/low-poly-door-04-f973f9b3bdd545629f9bed31352f2b6d
+* author:	sergeilihandristov (https://sketchfab.com/sergeilihandristov)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low poly door #04" (https://sketchfab.com/3d-models/low-poly-door-04-f973f9b3bdd545629f9bed31352f2b6d) by sergeilihandristov (https://sketchfab.com/sergeilihandristov) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

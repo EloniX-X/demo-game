@@ -1,0 +1,40 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bskqislvavf07"
+path="res://.godot/imported/scene.gltf-7a3e6f98184e5b007472489b5bcdd65c.scn"
+
+[deps]
+
+source_file="res://low_poly_door_04/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-7a3e6f98184e5b007472489b5bcdd65c.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:Sketchfab_model/1b60a71b673c47f1a71b414c14e8c050_fbx/RootNode/Plane005": {
+"import/skip_import": true
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
